@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-prime-950 text-prime-100 antialiased;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+@layer components {
+    .glass {
+        @apply bg-prime-900/40 backdrop-blur-md border border-prime-800/50;
+    }
+
+    .text-glow {
+        text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    }
+}
+
+.gradient-bg {
+    background: radial-gradient(circle at top right, #1e293b 0%, #020617 100%);
+}
+
+.gold-gradient {
+    background: linear-gradient(135deg, #D4AF37 0%, #F5D76E 50%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
