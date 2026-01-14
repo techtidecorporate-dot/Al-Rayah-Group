@@ -1,10 +1,11 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <footer className="w-full py-12 px-6 border-t border-accent-gold/5 bg-[#111827] relative overflow-hidden">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
                 {/* Brand Info */}
                 <div className="space-y-6">
                     <h3 className="text-2xl font-bold gold-gradient italic">AL RAYAH GLOBAL GROUP LTD</h3>
@@ -14,7 +15,7 @@ const Footer = () => {
                 </div>
 
                 {/* Contact Info */}
-                <div className="space-y-6 ml-16">
+                <div className="space-y-6">
                     <h4 className="text-accent-gold font-bold uppercase tracking-wider text-xs">Contact Us</h4>
                     <ul className="space-y-3">
                         <li className="flex items-start gap-3 text-prime-300 hover:text-accent-gold transition-colors">
@@ -39,6 +40,25 @@ const Footer = () => {
                             United Kingdom
                         </p>
                     </div>
+                </div>
+
+                {/* Legal & Governance */}
+                <div className="space-y-6">
+                    <h4 className="text-accent-gold font-bold uppercase tracking-wider text-xs">Legal & Governance</h4>
+                    <ul className="space-y-3 text-sm text-prime-300">
+                        <li>
+                            <Link to="/privacy-policy" className="hover:text-accent-gold transition-colors duration-300 uppercase">Privacy Policy</Link>
+                        </li>
+                        <li>
+                            <Link to="/cookie-policy" className="hover:text-accent-gold transition-colors duration-300 uppercase">Cookie Policy</Link>
+                        </li>
+                        <li>
+                            <Link to="/terms-conditions" className="hover:text-accent-gold transition-colors duration-300 uppercase">Terms & Conditions</Link>
+                        </li>
+                        <li>
+                            <Link to="/legal-notice" className="hover:text-accent-gold transition-colors duration-300 uppercase">Legal Notice</Link>
+                        </li>
+                    </ul>
                 </div>
             </div>
 

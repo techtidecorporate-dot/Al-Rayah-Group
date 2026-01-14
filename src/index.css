@@ -26,5 +26,19 @@
 .gold-gradient {
     background: linear-gradient(135deg, #D4AF37 0%, #F5D76E 50%, #D4AF37 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Legal Content Typography */
+.prose-legal ul {
+    @apply list-disc list-outside ml-5 space-y-2;
+}
+
+.prose-legal p {
+    @apply mb-4 leading-relaxed;
+}
+
+.prose-legal h2 {
+    @apply mt-12 mb-6;
 }

@@ -1,11 +1,15 @@
-import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
+import CookiePolicy from './components/CookiePolicy';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsConditions from './components/TermsConditions';
+import LegalNotice from './components/LegalNotice';
 import { Sparkles, ExternalLink, Globe2 } from 'lucide-react';
 import navLogo from './Assets/navLogo.jpeg';
 
-function App() {
+const LandingPage = () => {
     return (
-        <div className="min-h-screen bg-[#020617] flex flex-col selection:bg-accent-gold selection:text-prime-950">
+        <>
             {/* Premium Header - Updated to #111827 */}
             <header className="w-full py-5 px-8 flex justify-between items-center animate-fade-in z-50 bg-[#111827]">
                 <div className="flex items-center gap-4 group cursor-pointer">
@@ -17,7 +21,7 @@ function App() {
                         />
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-xl font-bold tracking-tight gold-gradient italic leading-none">Al RAYAH GLOBAL GROUP LTD</span>
+                        <span className="text-xl font-bold tracking-tight gold-gradient italic leading-none">AL RAYAH GLOBAL GROUP LTD</span>
                         <span className="text-[10px] text-accent-gold/50 uppercase tracking-[0.2em] font-bold mt-1">Excellence Defined</span>
                     </div>
                 </div>
@@ -51,10 +55,24 @@ function App() {
 
                 </div>
             </main>
+        </>
+    );
+};
 
-            {/* Footer */}
-            <Footer />
-        </div>
+function App() {
+    return (
+        <BrowserRouter>
+            <div className="min-h-screen bg-[#020617] flex flex-col selection:bg-accent-gold selection:text-prime-950">
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/cookie-policy" element={<CookiePolicy />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="/terms-conditions" element={<TermsConditions />} />
+                    <Route path="/legal-notice" element={<LegalNotice />} />
+                </Routes>
+                <Footer />
+            </div>
+        </BrowserRouter>
     );
 }
 
